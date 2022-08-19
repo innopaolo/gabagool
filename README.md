@@ -20,7 +20,7 @@ not the height. I am aware that the code is messy and chaotic, and certainly hav
 the weird behavior of the search bar when I resize the page vertically: it seems that the margin
 right styling grows, squishing the bar sideways to the left side. 
 
-<h3>Things I'm proud of:<h3>
+<h3>Things I'm proud of:</h3>
 
 This is my first clone of any webpage and I'm proud of being able to solve how the search bar works
 coming from no coding experience and just doing self-studying. It's a small step, but towards the 
