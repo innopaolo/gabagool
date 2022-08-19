@@ -1,0 +1,236 @@
+body {
+    background-color: #202124;
+	font-family: arial;
+	margin: 0;
+}
+
+/* Header navigation links */
+#hnav {
+	display: flex;
+	justify-content: flex-end;
+	padding: 10px;
+	font-size: 13px;
+	margin-top: 8px;
+}
+
+/* Pading to put spaces around links */
+a {
+	color: white;
+	text-decoration: none;
+	padding: 6px;
+	cursor: pointer;
+}
+
+/* Google strips underline and only shows when hovered */
+a:hover {
+	text-decoration: underline;
+}
+
+/* Add space between header images */
+.himg {
+	margin-left: 8px;
+}
+
+/* Flexbox column everything in main */
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Tweaked the position of the logo relative to the weird position of the search box */
+#logo {
+	margin-left: 20px;
+}
+
+/* Absolutely brutal, how do people design this? */
+#search {
+	width: 560px;
+	margin-top: 10px;
+}
+
+/* Icons and search in one line with flex display, then input with no borders (only the div) to simulate a whole ass search box */
+#searchBar {
+	background-color: #202124;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	border: 1px solid #4b4e53;
+	padding: 5px;
+	padding-right: 3px;
+	padding-left: 16px;
+	border-radius: 30px;
+}
+
+#searchBar input {
+	flex-grow: 1;
+	background-color: #202124;
+	border: none;
+	outline: none;
+	color: white;
+	font-size: 16px;
+}
+
+/* No idea why I constantly need to tweak margins??? Positioning of items always off */
+#searchBar img {
+	margin-right: 10px;
+}
+
+/* Proud of this discovery, hover triggers another hover yuzzzz */
+#searchBar:hover > input, #searchBar:hover {
+	background-color: #303134;
+}	
+
+/* God have mercy about my hacky styling */
+.buttons {
+	display: flex;
+	justify-content: space-evenly;
+	padding-top: 15px;
+	margin-left: 115px;
+	margin-right: 115px;
+}
+
+.btn {
+	background-color: #303134;
+	border: none;
+	color: #fff;
+	font-family: arial;
+	height: 38px;
+	border-radius: 5px;
+	padding: 0 15px;
+}
+
+.btn:hover {
+	border: 1px solid #4f5257;
+}
+
+aside {
+	color: #9fa3a7;
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+/* I spent hours trying to put the footer at the bottom until I found out about fixed positioning */
+/* I realized using lists for navs is better than the way I did my header */
+#fnav {
+	display: flex;
+	position: fixed;
+	bottom: 0;	
+	background-color: #171717;
+	width: 100%;
+	justify-content: space-between; 
+	border-top: 1px solid #4f5257;
+	align-items: center;
+	height: 48px;
+}
+
+/* Triple calls baby */
+#fnav ul a {
+	color: #9fa3a7;
+}	
+
+#left {
+	margin-left: -20px;
+	color: #4f5257;
+	font-size: 14px;
+	
+}
+#right {
+	padding-right: 30px;
+	color: #4f5257;
+	font-size: 14px;
+}
+
+/* My futile attempt at responsive design */ 
+/* Footer becomes two rows when screen gets smaller */
+@media (max-width: 700px) {
+	#fnav {
+		flex-direction: column;
+		padding-bottom: 40px;
+	}
+	
+	#fnav ul {
+		justify-content: center;
+	}
+	
+	#searchBar, #logo {
+		display: flex;
+		width: 75vh;
+		align-items: center;
+		justify-content: center;
+		margin-left: 10px;
+	}
+	
+	#searchBar {
+		margin-left: 6vh;
+	}
+}
+
+/* Consequences of my chaotic styling rears its warty, pockmarked head. */
+/* (search bar mysteriously glides to the left when window height is minimized) */ 
+/* I can't believe I'm technically not yet programming and it's already a mess. */
+ 
+@media (max-height: 500px) {
+	main {
+		margin-bottom: 50vh;
+		display: flex;
+		align-items: center;
+	}
+	
+	#fnav {
+		position: relative;
+	}
+}
+
+/* This is so I can have an image as an input button */
+/* Size and background of icon just can't be fixed for some reason */
+#stubborn_image {
+	margin-right: 20px; 
+    border: none;
+    outline: none;	
+}
+
+
+/* I don't know why my hover trigger discovery doesn't work here :( */
+#stubborn_image:hover > input, #stubborn_image:hover {
+	background-color: #303134;
+}
+
+
+/*
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⠤⠤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⠤⠤⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠞⠉⠀⠀⠀⠀⠈⠙⢦⡀⠀⠀⠀⠀⠀⠀⣴⠞⠉⠀⠀⠀⠀⠘⠙⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣀⡤⠴⠶⠶⠶⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡀⠀⠀⠀⢀⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠶⠶⠶⠶⢤⣀⠀⠀⠀⠀⠀
+⠀⠀⢀⡴⠚⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠚⡇⠀⠀⠀⢸⠑⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢦⡀⠀⠀
+⠀⢠⡎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⠴⠷⠶⠶⠶⠾⠦⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣆⠀
+⢀⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠶⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⡄
+⢸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠁⢀⣠⣤⠤⣤⡄⠀⠀⠀⠀⣤⠤⠤⣄⣀⠈⠻⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⡇
+⠘⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡾⠃⠀⡮⠷⠋⠉⠉⠉⠀⠀⠀⠀⠀⠉⠉⠉⠙⠺⢯⡀⠘⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣰⠇
+⠀⢻⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠁⠀⣠⠴⠒⠲⢤⡀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠶⠒⠶⣽⡀⠈⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡟⠀
+⠀⢠⡿⠂⠀⠀⠀⠀⠀⠀⠀⢀⣸⠃⢀⡜⠁⠀⠀⠀⠀⠙⣦⠀⠀⠀⠀⠀⣰⠋⠀⢀⠀⠀⠈⢳⡀⠘⣇⠀⠀⠀⠀⠀⠀⠀⠀⠸⢻⣄⠀
+⣰⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⠀⡞⠀⠀⠀⠀⣿⠀⠀⠘⣇⠀⠀⠀⢸⠃⠀⠀⢸⡀⠀⠀⠀⢻⠀⢹⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢺⣆
+⣿⠀⠀⠀⠀⠀⠀⢠⡴⠒⠲⣾⡇⢸⠁⠀⠀⣠⣼⣿⣤⡀⠀⢹⡀⠀⠀⡏⠀⢀⣴⣿⣷⣄⠀⠀⠀⣇⢸⣷⠖⠒⠲⣄⠀⠀⠀⠀⠀⠈⣿
+⢿⡀⠀⠀⠀⠀⢰⠏⠀⡄⠀⠙⢷⣿⠀⠀⢸⣿⣿⣿⣟⣿⠀⢸⡇⠀⢸⡇⠀⣿⣟⣿⣿⣿⣧⠀⠀⣿⡾⠁⠀⢀⠀⠘⣆⠀⠀⠀⠀⢰⡿
+⠀⢷⣄⠀⠀⠀⢸⡀⠀⠻⡄⠀⢸⢿⡄⠀⠈⠻⢿⣿⡿⠏⣀⣼⣷⣶⣦⣥⣀⠘⢿⣿⡿⠿⠃⠀⢀⡿⡇⠀⢀⠟⠀⢀⡿⠀⠀⠀⣠⡾⠁
+⠀⠀⠙⠳⣤⣄⣀⣷⡀⠀⣿⢠⡞⠀⠙⠲⢤⣤⠩⡿⢀⣼⠟⡽⢿⣿⢻⢿⣿⣦⡀⢹⠉⢤⠤⠶⠛⡁⠹⡄⢿⠀⠀⣼⣁⣠⣤⠞⠋⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⢧⠀⠁⠨⣾⠶⠊⠉⠓⢦⡀⠁⢸⣟⣠⣀⣼⠏⠀⠈⣿⣿⡇⠈⢀⣴⠞⠉⠙⠲⡵⠆⠀⠀⣸⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⡟⠐⠤⣤⠼⠁⢃⠀⢸⣿⣿⣋⠁⠀⢀⣠⣿⣿⡇⠀⢸⠈⠳⢤⡤⠖⢻⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⡅⠀⠀⢷⠀⠀⢰⠀⠀⠸⡄⠀⠙⣿⣿⣶⣴⣾⣿⣿⠏⠀⠀⡇⠀⠀⡎⠀⠀⣸⠀⠀⢠⣷⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⢳⡀⠀⠘⡆⠀⠈⢦⠀⠀⠙⢄⡀⠀⠉⠙⠛⠋⠉⠀⠀⣠⠞⠀⠀⣰⠃⠀⢠⠇⠀⢀⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠳⣄⠀⠹⣄⠀⠈⠳⡄⠀⠀⠙⠓⠤⠤⠀⠤⠤⠒⠋⠀⠀⢀⡴⠁⠀⢠⠟⠀⣠⡞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄⠈⢢⡀⠀⠈⠳⣤⣀⡀⠀⠀⠀⠀⠀⠀⣀⣤⠖⠉⠀⢀⡴⠋⣠⡾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣶⣾⣷⣄⠈⠳⢄⡀⠈⠙⠿⠿⣿⣿⣿⡿⠿⠛⠁⠀⣀⠴⠋⣠⣾⣷⣶⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣋⠈⡛⢷⣄⠀⠉⠑⠂⠀⠤⢤⣤⣤⠄⠄⠀⠀⠈⠀⢠⣾⠻⠛⠉⢻⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣾⣶⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣷⣷⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣄⡀⠀⠀⠀⠀⠀⢀⣠⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣭⣿⣿⣛⣻⣟⣿⣿⣿⣶⢶⣶⣶⣶⣿⣿⣿⣛⣟⣛⣋⣉⣩⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢿⣿⣿⠿⠿⠿⠿⠿⢿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⡿⠋⠁⠀⠀⠀⠀⠀⠀⠙⠿⣧⣼⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⠿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠿⢿⣿⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+*/
+⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
